@@ -6,7 +6,7 @@ import Favicon from 'react-favicon';
 import "./global.css"
 import { SuperSEO } from "react-super-seo";
 
-document.title = "VPN-приложение";
+document.title = "Facturation des vignettes";
 
 // var link = document.querySelector("link[rel~='icon']");
 // if (!link) {
@@ -19,16 +19,16 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <SuperSEO
-        title="VPN-приложение | VpnWorld"
-        description="быстрый vpn-туннель для разблокировки вашего опыта работы в сети."
-        lang="ru"
+        title="vignette (SNTL) Application de gestion | vapp"
+        description="Un moyen simple de gérer le service de vignettes de vos stations  et de le transformer en fonction des dernières règles de SNTL"
+        lang="fr"
         openGraph={{
           ogImage: {
-            ogImage: 'https://res.cloudinary.com/dupagadir/image/upload/v1651409226/Vectary_texture_xncxxr.png',
-            ogImageAlt: 'VpnWorld',
-            ogImageWidth: 538,
-            ogImageHeight: 297,
-            ogImageType: 'image/jpeg',
+            ogImage: 'https://res.cloudinary.com/dupagadir/image/upload/s--UO20D7YC--/v1658099879/ajoute_un_Bon_dypcmh.webp',
+            ogImageAlt: 'Facturation des vignettes',
+            ogImageWidth: 1025,
+            ogImageHeight: 550,
+            ogImageType: 'image/webp',
           },
         }}
         viewport={"width=device-width, initial-scale=1"}
@@ -36,7 +36,7 @@ root.render(
         googlebot={"index"}
       />
     <App />
-    <Favicon url="https://res.cloudinary.com/dupagadir/image/upload/v1651410941/frame-3_anscx7.ico"/>
+    <Favicon url="https://kmoz.dev/favicon.ico"/>
   </React.StrictMode>
 );
 

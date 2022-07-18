@@ -3,7 +3,8 @@ import { Provider, Heading, Subhead } from 'rebass'
 import {
   Hero, CallToAction,
   // ScrollDownIndicator,
-  Flex, Phone, Laptop, SignUp
+  Flex, Phone, Laptop, SignUp,
+  Contributor
 } from 'react-landing-page'
 import styledComponents from 'styled-components';
 import Android from './icons/android';
@@ -31,21 +32,20 @@ const Faqdata = {
   title: "FAQ",
   rows: [
     {
-      title: "Как установить VPN на Mac ?",
-      content: `Скачайте сборку для вашего Mac с сайта vpn.oldi.dev . После скачивания откройте файл с расширением .pkg, используя нажатие правой кнопки мыши. Разрешите приложению вносить изменения, затем начнется процесс установки. После установки приложение запросит пароль вашего устройства для настройки параметров сети. 
-      <a style="color:blue; cursor:pointer;" class="video-0">Смотреть видео</a>
-      <div class="video0">
-      <video width="400" controls autoplay>
-      <source src="https://res.cloudinary.com/dqfdxmdcn/video/upload/v1653085010/Mac_Installation_AdobeCreativeCloudExpress_1_ylzk9b.mp4" type="video/mp4">
-      </video>
-      </div>`,
+      title: "Comment installer l'application sur windows?",
+      content: `téléchargez l'application depuis le site Web vighette.kmoz.dev. 
+      save the exe file and click on it two time to start installing.
+      continuez à cliquer sur suivant. 
+      félicitations, vous l'avez installé avec succès. la prochaine étape consiste à faire une demande de licence de démonstration.`,
     },
     {
-      title: "Как установить VPN на Windows устройство ?",
+      title: "Comment obtenir une licence et comment l'utiliser?",
       content:
-        `Скачайте сборку для вашего ПК с сайта vpn.oldi.dev . После скачивания откройте файл с расширением .exe . 
-        Скорее всего Windows выведет сообщение о неопознанном ПО. В этом случае нажмите «Подробнее», а затем «Выполнить в любом случае».
-        Разрешите приложению вносить изменения.`,
+        `Demandez votre licence de démonstration par e-mail à: kimo@oldi.dev et nous vous enverrons une toute nouvelle licence qui vous réservera une place dans le groupe de test.
+        après avoir installé l'application, il vous sera demandé une licence . assurez-vous d'entrer la licence que vous avez reçue de notre part dans le champ sans espaces.
+        après cela, vous obtiendrez un code QR qui sera scanné avec google authenticator et cliquez sur Retour pour vous connecter.
+        demo license is valid for 1 master machine (first machine to use the licence) that will have access to all vignettes entered by others live machines (machines that used license after it's been used first time by master machine.
+        la licence de démonstration peut avoir jusqu'à 20 machines pendant un mois.`,
     }
   ],
 };
@@ -60,37 +60,37 @@ function App() {
   // console.log(device.getDevice());
 
   const [isVideo0Open, setVideo0Open] = useState(false)
-  useEffect(() => {
-    var $hidden = document.querySelector(".video0");
-    let el = document.querySelector(".video-0");
-    let Video0Open = document.querySelector(".video0 video");
-    let ev =
-      el.addEventListener("click", () => {
-        // ModalVideo
-        if ($hidden.classList.contains('showvideo')) {
-          console.log($hidden.classList.contains('showvideo'));
-          // $hidden.classList.remove('showvideo');
-          Video0Open.pause();
-        } else {
-          $hidden.classList.add('showvideo');
-          Video0Open.play();
-        }
-        // if ($hidden.classList.contains('showvideo')) {
-        //   $hidden.classList.remove('showvideo');
-        //   if (Video0Open) {
-        //     Video0Open.pause();
-        //   }
-        // } else {
-         
-        //   if (Video0Open) {
-        //   }
-        // }
-      })
-    return () => {
-      // el.removeEventListener("click", ()=>null, { passive: true });
-      // setVideo0Open(false)
-    }
-  }, [isVideo0Open])
+  // useEffect(() => {
+  //   var $hidden = document.querySelector(".video0");
+  //   // let el = document.querySelector(".video-0");
+  //   let Video0Open = document.querySelector(".video0 video");
+  //   let ev =
+  //     el?.addEventListener("click", () => {
+  //       // ModalVideo
+  //       if ($hidden.classList.contains('showvideo')) {
+  //         console.log($hidden.classList.contains('showvideo'));
+  //         // $hidden.classList.remove('showvideo');
+  //         Video0Open.pause();
+  //       } else {
+  //         $hidden.classList.add('showvideo');
+  //         Video0Open.play();
+  //       }
+  //       // if ($hidden.classList.contains('showvideo')) {
+  //       //   $hidden.classList.remove('showvideo');
+  //       //   if (Video0Open) {
+  //       //     Video0Open.pause();
+  //       //   }
+  //       // } else {
+
+  //       //   if (Video0Open) {
+  //       //   }
+  //       // }
+  //     })
+  //   return () => {
+  //     // el.removeEventListener("click", ()=>null, { passive: true });
+  //     // setVideo0Open(false)
+  //   }
+  // }, [isVideo0Open])
 
   // useEffect(() => {
 
@@ -102,33 +102,10 @@ function App() {
         <HeroStyled
           className={"hero0"}
           color='white'
-          bg='#2EA9D0'
+          bg='#06a846'
           backgroundImage='https://res.cloudinary.com/dupagadir/image/upload/v1651393997/alina-grubnyak-ZiQkhI7417A-unsplash_2_dvfby8.jpg'
         >
-          <Flex flexWrap={"wrap"} mt={50} justifyContent="space-around" alignItems={"center"}>
-            <Flex flexWrap='wrap' alignItems='center' id='mobile'>
-              <Flex alignItems='flex-start' width={[1, 1 / 2]} p={3}>
-                <Phone
-                  // src='https://via.placeholder.com/187x406'
-                  src="https://res.cloudinary.com/dupagadir/image/upload/v1651396028/01_-_Default_qyxs55.png"
-                  notch style={{ transform: 'translate(32px, 64px)' }} />
-                <Phone src='https://res.cloudinary.com/dupagadir/image/upload/v1651395857/Connected_xsdkxn.png' color='white'
-                  style={{ transform: 'translate(-32px, 0px)' }} />
-              </Flex>
-              <Flex width={[1, 1 / 2]} alignItems='center' flexDirection='column' p={3} >
-                <Heading textAlign={"center"}>Мобильное приложение <Name>VPNWOLRD</Name></Heading>
-                <Subhead fontSize={[2, 3]}>Скачать</Subhead>
-                <Flex mt={2} flexWrap='wrap' justifyContent='center'>
-                  <CallToActionStyled
-                    // onClick={() => document.location.assign("itms-services://?action=download-manifest&url=https://www.installonair.com/storage/ipaz/MymQR2/MymQR2.plist")}
-                    onClick={() => document.location.assign("https://apps.apple.com/ru/app/vpnworld/id1624305127")}
-                    bg="black" mb={2}><AppleIcon size={25} />Apple Store</CallToActionStyled>
-                  <CallToActionStyled
-                    onClick={() => document.location.assign("https://github.com/KM8Oz/vpnworld-landing-page/releases/download/v1.018/76129bdd-6a14-4535-a20c-bffb53e5baf9-b12787e7e6814f3abff49804da1110ce.apk")}
-                    bg="black"><AndroidStyled />Universal Apk</CallToActionStyled>
-                </Flex>
-              </Flex>
-            </Flex>
+          <Flex flexWrap={"wrap"} flexDirection="column" mt={50} justifyContent="space-around" alignItems={"center"}>
             <Flex
               className={"hero1"}
               flexDirection="column"
@@ -136,8 +113,8 @@ function App() {
               justifyContent={"space-around"}
               id={"desktop"}
             >
-              <HeadingStyled pt={100} >Настольное приложение</HeadingStyled>
-              <Subhead fontSize={[2, 3]}>Screenshot & Download link</Subhead>
+              <HeadingStyled pt={100} >Application de bureau</HeadingStyled>
+              <Subhead fontSize={[2, 3]}>Capture d'écran & lien de téléchargement</Subhead>
               <Flex mt={2} flexWrap='wrap' justifyContent='center'>
                 <CallToActionStyled
                   onClick={() => document.location.assign("https://github.com/KM8Oz/vpn-world-desktop/releases/download/v4.5.0/vpnworld.Setup.4.5.0.exe")}
@@ -152,15 +129,15 @@ function App() {
                   <p>Mac OS</p>
                   <div className='insider'>
                     <CallToActionStyled onClick={() => document.location.assign("https://github.com/KM8Oz/vpn-world-desktop/releases/download/v4.5.0/vpnworld-4.5.0.pkg")} mt={3} bg='black'>
-                     <Intel style={{
-                       marginRight: 10
-                     }} />
-                     Intel CPU</CallToActionStyled>
-                    <CallToActionStyled onClick={() => document.location.assign("https://github.com/KM8Oz/vpn-world-desktop/releases/download/v4.5.0/vpnworld-4.5.0-arm64.pkg")} mt={3} bg='black'>
-                      <M1Mac 
-                      style={{
+                      <Intel style={{
                         marginRight: 10
-                      }}
+                      }} />
+                      Intel CPU</CallToActionStyled>
+                    <CallToActionStyled onClick={() => document.location.assign("https://github.com/KM8Oz/vpn-world-desktop/releases/download/v4.5.0/vpnworld-4.5.0-arm64.pkg")} mt={3} bg='black'>
+                      <M1Mac
+                        style={{
+                          marginRight: 10
+                        }}
                       />
                       M1 CPU</CallToActionStyled>
                   </div>
@@ -170,7 +147,22 @@ function App() {
                 }} size={20} /> Linux (arm64/i32)</CallToActionStyled>
               </Flex>
               {/* https://github.com/KM8Oz/vpn-world-desktop/releases/download/v4.5.0/vpnworld_4.5.0_amd64.deb */}
-              <Laptop mt={3} src={"https://res.cloudinary.com/dupagadir/image/upload/v1651401708/desktop_fqzqoe.png"} />
+              <Laptop mt={3} src={"https://res.cloudinary.com/dup-sarl/video/upload/v1658103394/Screen_Recording_2022-07-18_at_1.02.44_AM_fpbw5u.gif"} />
+            </Flex>
+            <Flex justifyContent={"space-around"} flexDirection={"column"}>
+            <Heading textAlign="center">Made with ❤ by</Heading>
+            <Flex justifyContent="space-around">
+              <Contributor
+                fullName="Ouazmir Abdelkarim"
+                title="developer"
+                avatar="https://kmoz.dev/_next/image?url=https%3A%2F%2Fmedia-exp1.licdn.com%2Fdms%2Fimage%2FC4D03AQFMjxSy2_Z9zw%2Fprofile-displayphoto-shrink_800_800%2F0%2F1649639681159%3Fe%3D1660176000%26v%3Dbeta%26t%3DEN_dlPZFziFauM3GZ4g076HOAwen0APScREA63iOdOo&w=3840&q=75"
+              >
+                <Flex>
+                  <NavLink href='https://github.com/KM8Oz'>GitHub</NavLink>
+                  <NavLink href='https://www.linkedin.com/in/km8oz/'>LinkedIn</NavLink>
+                </Flex>
+              </Contributor>
+            </Flex>
             </Flex>
           </Flex>
           <Flex mt={10} ml={10} mr={10} mb={20} style={{
@@ -183,15 +175,14 @@ function App() {
             />
           </Flex>
           <Flex width={[1]} mb={100} flexDirection={"column"} mt={10} flexWrap='wrap' alignItems={"center"} justifyContent='center'>
-            <HeadingStyled >Отправьте свое электронное письмо, чтобы добавить вас в ограниченную группу тестирования</HeadingStyled>
+            <HeadingStyled >Obtenez votre licence de démonstration maintenant (valide pour 1 mois et 20 machine )</HeadingStyled>
             <SignUp color={"#000"} label="электронная почта" onSubmit={(email) => window.location.assign("mailto:cloud0@markate.ru?Bcc=" + email + "&Subject=" + encodeURIComponent("vpnworld releases subscription") + "&body=" + encodeURIComponent("i would like to subscribe for you news latter related to vpnworld."))} mt={3} />
           </Flex>
           <Flex width={[1]} is="footer" alignItems="center" justifyContent={"space-between"} p={3}>
             <Flex is='left-footer' alignItems={"center"} justifyContent={"flex-start"} >
-              <NavLink children="mobile" href="#mobile" />
               <NavLink children="desktop" href="#desktop" />
             </Flex>
-            <Small color="#fff" ml="auto">© OLDI Development OOO, 2022</Small>
+            <Small color="#fff" ml="auto">© kmoz.dev, 2022-2025</Small>
           </Flex>
         </HeroStyled>
       </Provider>

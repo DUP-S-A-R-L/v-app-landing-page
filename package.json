@@ -1,5 +1,5 @@
 {
-    "name": "vpnworld-landing-page",
+    "name": "vignettes-app-landing-page",
     "version": "0.1.1",
     "private": true,
     "dependencies": {
@@ -52,9 +52,9 @@
     },
     "repository": {
         "type": "git",
-        "url": "git@github.com:KM8Oz/vpnworld-landing-page.git"
+        "url": "git@github.com:DUP-S-A-R-L/v-app-landing-page.git"
     },
-    "homepage": "http://vpn.oldi.dev",
+    "homepage": "http://vignette.kmoz.dev",
     "devDependencies": {
         "babel-plugin-styled-components": "^2.0.7"
     }

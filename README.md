@@ -1,1 +1,1 @@
-# vpnworld landing page: vpnworld.oldidev.ru
+# vighette app landing page: vighette.kmoz.dev
